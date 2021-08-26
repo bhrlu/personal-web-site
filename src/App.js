@@ -1,8 +1,70 @@
+import { createTheme, ThemeProvider, CssBaseline, Container } from '@material-ui/core';
+import Header from './components/Header';
+
+import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
+
+const poppinsRegular = {
+  fontFamily: 'PoppinsRegular',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+      local('PoppinsRegular'),
+      local('PoppinsRegular'),
+      url(${PoppinsRegularTTF}) format('truetype');
+    `,
+};
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#000000',
+      light: '#2c2c2c',
+      dark: '#000000',
+      contrastText: '#ffffff',
+    },
+    secondary: {
+      main: '#ffbd39',
+      light: '#ffef6c',
+      dark: '#c78d00',
+      contrastText: '#000000',
+    }
+  },
+  typography: {
+    fontFamily: 'PoppinsRegular'
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#ffffff',
+          cursor: 'pointer',
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: '#ffffff',
+        },
+      },
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@font-face': [poppinsRegular],
+      },
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Header />
+      </Container>
+    </ThemeProvider>
   );
 }
 
