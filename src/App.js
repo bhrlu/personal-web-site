@@ -1,8 +1,10 @@
 import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
-import Header from './components/Header';
 
 import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
+
+import AppBarComponent from './components/AppBarComponent';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 const poppinsRegular = {
   fontFamily: 'PoppinsRegular',
@@ -62,6 +64,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <AppBarComponent />
       <Header />
       <Footer />
     </ThemeProvider>
