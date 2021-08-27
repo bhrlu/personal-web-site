@@ -7,6 +7,7 @@ import AppBarComponent from './components/AppBarComponent';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Resume from './components/Resume';
+import Skills from './components/Skills';
 
 const poppinsRegular = {
   fontFamily: 'PoppinsRegular',
@@ -65,6 +66,14 @@ const theme = createTheme({
           color: '#ffffff',
           backgroundColor: '#2c2c2c',
           borderRadius: 10,
+        },
+      },
+    },
+    MuiLinearProgress: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#2c2c2c',
+          borderRadius: 5,
         }
       }
     }
@@ -79,6 +88,7 @@ function App() {
       <Header />
       <About />
       <Resume />
+      <Skills />
       <Footer />
     </ThemeProvider>
   );
