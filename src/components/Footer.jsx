@@ -5,7 +5,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import TelegramIcon from '@material-ui/icons/Telegram';
-import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyle = makeStyles(theme => ({
@@ -68,7 +68,7 @@ const Footer = () => {
             <TelegramIcon fontSize='large' className={classes.socialIcons} />
           </Link>
           <Link className={`${classes.about} ${classes.link}`}>
-            <InstagramIcon fontSize='large' className={classes.socialIcons} />
+            <GitHubIcon fontSize='large' className={classes.socialIcons} />
           </Link>
           <Link className={`${classes.about} ${classes.link}`}>
             <LinkedInIcon fontSize='large' className={classes.socialIcons} />
