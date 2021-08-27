@@ -7,7 +7,7 @@ const useStyle = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
-    padding: theme.spacing(6.5),
+    padding: theme.spacing(3),
   },
   image: {
     maxWidth: '50%',

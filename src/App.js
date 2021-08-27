@@ -6,6 +6,7 @@ import About from './components/About';
 import AppBarComponent from './components/AppBarComponent';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Resume from './components/Resume';
 
 const poppinsRegular = {
   fontFamily: 'PoppinsRegular',
@@ -58,6 +59,15 @@ const theme = createTheme({
         '@font-face': [poppinsRegular],
       },
     },
+    MuiCard:{
+      styleOverrides: {
+        root: {
+          color: '#ffffff',
+          backgroundColor: '#2c2c2c',
+          borderRadius: 10,
+        }
+      }
+    }
   },
 });
 
@@ -68,6 +78,7 @@ function App() {
       <AppBarComponent />
       <Header />
       <About />
+      <Resume />
       <Footer />
     </ThemeProvider>
   );
