@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 
 import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
+import About from './components/About';
 
 import AppBarComponent from './components/AppBarComponent';
 import Footer from './components/Footer';
@@ -48,7 +49,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: '#ffffff',
+          color: '#000000',
         },
       },
     },
@@ -66,6 +67,7 @@ function App() {
       <CssBaseline />
       <AppBarComponent />
       <Header />
+      <About />
       <Footer />
     </ThemeProvider>
   );
