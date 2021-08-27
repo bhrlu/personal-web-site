@@ -4,6 +4,7 @@ import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
 import About from './components/About';
 
 import AppBarComponent from './components/AppBarComponent';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Resume from './components/Resume';
@@ -60,7 +61,7 @@ const theme = createTheme({
         '@font-face': [poppinsRegular],
       },
     },
-    MuiCard:{
+    MuiCard: {
       styleOverrides: {
         root: {
           color: '#ffffff',
@@ -74,9 +75,9 @@ const theme = createTheme({
         root: {
           backgroundColor: '#2c2c2c',
           borderRadius: 5,
-        }
-      }
-    }
+        },
+      },
+    },
   },
 });
 
@@ -89,6 +90,7 @@ function App() {
       <About />
       <Resume />
       <Skills />
+      <Contact />
       <Footer />
     </ThemeProvider>
   );
