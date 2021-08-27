@@ -19,14 +19,14 @@ const useStyle = makeStyles(theme => ({
     opacity: 0.7
   },
   descriptionsTitle: {
-    padding: theme.spacing(0, 0 , 3, 0),
+    padding: theme.spacing(0, 0, 3, 0),
   },
   descriptions: {
-    padding: theme.spacing(0, 0 , 3, 0),
+    padding: theme.spacing(0, 0, 3, 0),
     opacity: 0.7
   },
   button: {
-   padding: theme.spacing(5, 0, 0, 0),
+    padding: theme.spacing(5, 0, 0, 0),
   },
   imageGrid: {
     backgroundImage: `url(${amirmahdi})`,
@@ -40,8 +40,7 @@ const About = () => {
   const classes = useStyle();
   return (
     <Grid className={classes.root} container justifyContent='center' alignItems='flex-start'>
-      <Grid className={classes.imageGrid} container justifyContent='center' alignItems='center' item xs={6}>
-      </Grid>
+      <Grid className={classes.imageGrid} container justifyContent='center' alignItems='center' item xs={6} />
       <Grid container direction='column' justifyContent='center' alignItems='flex-start' item xs={6}>
         <Grid item xs={6}>
           <Typography variant='h2'>About Me</Typography>
