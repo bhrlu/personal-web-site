@@ -1,59 +1,61 @@
 import React from 'react';
-import { AppBar, Grid, Link, Toolbar, Typography, useScrollTrigger } from '@material-ui/core';
+import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/styles';
+import AppBarDrawer from './AppBarDrawer';
 
 
 const useStyle = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(0, 3),
-    padding: theme.spacing(0),
+    padding: theme.spacing(3, 0),
   },
   links: {
     padding: theme.spacing(0, 0, 0, 18),
   },
   link: {
-    fontSize: 16,
     '&:hover': {
-      color: theme.palette.secondary.main
-    }
-  }
+      color: theme.palette.secondary.main,
+      cursor: 'pointer',
+    },
+    [theme.breakpoints.down('md')]: {
+      visibility: 'hidden',
+    },
+  },
+  linkActive: {
+    color: theme.palette.secondary.main,
+    textDecoration: 'underline'
+  },
+  drawerVisibility: {
+    [theme.breakpoints.up('md')]: {
+      visibility: 'hidden',
+    },
+  },
 }));
 
-function ElevationScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-};
-
-const AppBarComponent = () => {
+const AppBarComponent = (props) => {
   const classes = useStyle();
   return (
-    <ElevationScroll>
-      <AppBar>
-        <Toolbar className={classes.root}>
+    <AppBar position='sticky'>
+      <Container>
+        <Toolbar>
           <Grid container justifyContent='center' alignItems='center'>
-            <Grid item xs={3} container justifyContent='center' alignItems='center'>
-              <Typography variant='h4'>Amir mahdi</Typography>
+            <Grid item xs={3} container justifyContent='flex-start' alignItems='center'>
+              <Typography variant='h4'>Amir Mahdi</Typography>
             </Grid>
-            <Grid className={classes.links} item xs={9} container justifyContent='space-evenly' alignItems='center'>
-              <Link className={classes.link}>Home</Link>
-              <Link className={classes.link}>About</Link>
-              <Link className={classes.link}>Resume</Link>
-              <Link className={classes.link}>Skills</Link>
-              <Link className={classes.link}>Contact</Link>
+            <Grid className={classes.links} item xs={9} container justifyContent='space-between' alignItems='center'>
+              <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.homeRef.current)}>Home</Typography>
+              <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'about' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.aboutRef.current)}>About</Typography>
+              <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'resume' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.resumeRef.current)}>Resume</Typography>
+              <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'skills' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.skillsRef.current)}>Skills</Typography>
+              <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'contact' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.contactRef.current)}>Contact</Typography>
+              <div className={classes.drawerVisibility}>
+                <AppBarDrawer props={props} />
+              </div>
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
-    </ElevationScroll>
+      </Container>
+    </AppBar>
   );
 }
 

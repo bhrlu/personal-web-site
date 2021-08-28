@@ -1,4 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
+
 import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
 import About from './components/About';
@@ -35,7 +38,7 @@ const theme = createTheme({
       light: '#ffef6c',
       dark: '#c78d00',
       contrastText: '#000000',
-    }
+    },
   },
   typography: {
     fontFamily: 'PoppinsRegular'
@@ -81,17 +84,96 @@ const theme = createTheme({
   },
 });
 
+const useStyle = makeStyles({
+  root: {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+  },
+});
+
 function App() {
+  const [visibleSection, setVisibleSection] = useState('');
+
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const resumeRef = useRef(null);
+  const skillsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const getDimensions = (ele) => {
+    const { height } = ele.getBoundingClientRect();
+    const offsetTop = ele.offsetTop;
+    const offsetBottom = offsetTop + height;
+
+    return {
+      height,
+      offsetTop,
+      offsetBottom,
+    };
+  };
+
+  const scrollTo = (ele) => {
+    ele.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+  useEffect(() => {
+    const sectionRefs = [
+      { section: "home", ref: homeRef },
+      { section: "about", ref: aboutRef },
+      { section: "resume", ref: resumeRef },
+      { section: "skills", ref: skillsRef },
+      { section: "contact", ref: contactRef },
+    ];
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 350;
+
+      const selected = sectionRefs.find(({ ref }) => {
+        const ele = ref.current;
+        if (ele) {
+          const { offsetBottom, offsetTop } = getDimensions(ele);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+        return false;
+      });
+
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section);
+      } else if (!selected && visibleSection) {
+        setVisibleSection(undefined);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [visibleSection]);
+
+  const classes = useStyle();
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBarComponent />
-      <Header />
-      <About />
-      <Resume />
-      <Skills />
-      <Contact />
-      <Footer />
+      <div className={classes.root}>
+        <AppBarComponent
+          visibleSection={visibleSection}
+          scrollTo={scrollTo}
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          resumeRef={resumeRef}
+          skillsRef={skillsRef}
+          contactRef={contactRef}
+        />
+        <Header homeRef={homeRef} />
+        <About aboutRef={aboutRef} />
+        <Resume resumeRef={resumeRef} />
+        <Skills skillsRef={skillsRef} />
+        <Contact contactRef={contactRef} />
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }

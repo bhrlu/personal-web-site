@@ -1,13 +1,11 @@
-import { Button, Grid, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import amirmahdi from '../assets/image/amirmahdi.png'
 
 const useStyle = makeStyles(theme => ({
   root: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-    padding: theme.spacing(3),
+    padding: theme.spacing(3, 0),
   },
   image: {
     maxWidth: '50%',
@@ -36,35 +34,37 @@ const useStyle = makeStyles(theme => ({
     backgroundPosition: 'center',
   }
 }));
-const About = () => {
+const About = (props) => {
   const classes = useStyle();
   return (
-    <Grid className={classes.root} container justifyContent='center' alignItems='flex-start'>
-      <Grid className={classes.imageGrid} container justifyContent='center' alignItems='center' item xs={6} />
-      <Grid container direction='column' justifyContent='center' alignItems='flex-start' item xs={6}>
-        <Grid item xs={6}>
-          <Typography variant='h2'>About Me</Typography>
-          <Typography className={classes.about} paragraph>I'm a young boy who has been interested in programming since early childhood; I'm not afraid to take and face any new challenge and like to experience new things.</Typography>
-        </Grid>
-        <Grid container item xs={6}>
-          <Grid item xs={3}>
-            <Typography variant='h6' className={classes.descriptionsTitle}>Name :</Typography>
-            <Typography variant='h6' className={classes.descriptionsTitle}>Date of brith :</Typography>
-            <Typography variant='h6' className={classes.descriptionsTitle}>Email :</Typography>
-            <Typography variant='h6' className={classes.descriptionsTitle}>Phone :</Typography>
+    <Container id='about' ref={props.aboutRef} className={classes.root}>
+      <Grid  container justifyContent='center' alignItems='flex-start'>
+        <Grid className={classes.imageGrid} container justifyContent='center' alignItems='center' item xs={6} />
+        <Grid container direction='column' justifyContent='center' alignItems='flex-start' item xs={6}>
+          <Grid item xs={6}>
+            <Typography variant='h2'>About Me</Typography>
+            <Typography className={classes.about} paragraph>I'm a young boy who has been interested in programming since early childhood; I'm not afraid to take and face any new challenge and like to experience new things.</Typography>
           </Grid>
-          <Grid item xs={9}>
-            <Typography variant='h6' className={classes.descriptions}>Amir mahdi Baharlou</Typography>
-            <Typography variant='h6' className={classes.descriptions}>November 18, 1999</Typography>
-            <Typography variant='h6' className={classes.descriptions}>amirmahdibaharlou@gmail.com</Typography>
-            <Typography variant='h6' className={classes.descriptions}>+98 910 950 5714</Typography>
+          <Grid container item xs={6}>
+            <Grid item xs={3}>
+              <Typography variant='h6' className={classes.descriptionsTitle}>Name :</Typography>
+              <Typography variant='h6' className={classes.descriptionsTitle}>Date of brith :</Typography>
+              <Typography variant='h6' className={classes.descriptionsTitle}>Email :</Typography>
+              <Typography variant='h6' className={classes.descriptionsTitle}>Phone :</Typography>
+            </Grid>
+            <Grid item xs={9}>
+              <Typography variant='h6' className={classes.descriptions}>Amir mahdi Baharlou</Typography>
+              <Typography variant='h6' className={classes.descriptions}>November 18, 1999</Typography>
+              <Typography variant='h6' className={classes.descriptions}>amirmahdibaharlou@gmail.com</Typography>
+              <Typography variant='h6' className={classes.descriptions}>+98 910 950 5714</Typography>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid item className={classes.button} >
-          <Button size='large' variant='contained' color='secondary'>DOWNLOAD CV</Button>
+          <Grid item className={classes.button} >
+            <Button size='large' variant='contained' color='secondary'>DOWNLOAD CV</Button>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }
 
