@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Container, Grid, Toolbar, Typography } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/styles';
+import AppBarDrawer from './AppBarDrawer';
 
 
 const useStyle = makeStyles(theme => ({
@@ -16,13 +17,20 @@ const useStyle = makeStyles(theme => ({
       color: theme.palette.secondary.main,
       cursor: 'pointer',
     },
+    [theme.breakpoints.down('md')]: {
+      visibility: 'hidden',
+    },
   },
   linkActive: {
     color: theme.palette.secondary.main,
     textDecoration: 'underline'
   },
+  drawerVisibility: {
+    [theme.breakpoints.up('md')]: {
+      visibility: 'hidden',
+    },
+  },
 }));
-
 
 const AppBarComponent = (props) => {
   const classes = useStyle();
@@ -40,6 +48,9 @@ const AppBarComponent = (props) => {
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'resume' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.resumeRef.current)}>Resume</Typography>
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'skills' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.skillsRef.current)}>Skills</Typography>
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'contact' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.contactRef.current)}>Contact</Typography>
+              <div className={classes.drawerVisibility}>
+                <AppBarDrawer props={props} />
+              </div>
             </Grid>
           </Grid>
         </Toolbar>

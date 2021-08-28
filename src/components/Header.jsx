@@ -31,7 +31,7 @@ const Header = (props) => {
         <Grid className={classes.typo} item container direction='column' justifyContent='center' alignItems='flex-start' xs={6}>
           <Typography gutterBottom variant='h5' color='secondary'>HELLO!</Typography>
           <Grid className={classes.name} item>
-            <Typography variant='h2'  >I'm </Typography>
+            <Typography variant='h2'>I'm </Typography>
             <Typography variant='h2' color='secondary'>Amir mahdi</Typography>
           </Grid>
           <Typography variant='h1' color='secondary'>Baharlou</Typography>
