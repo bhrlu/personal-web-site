@@ -33,7 +33,7 @@ const AppBarDrawer = (props) => {
 
   const list = () => {
     return (
-      <Container maxWidth="sm">
+      <Container>
         <Grid container direction='column' justifyContent='flex-start' alignItems='flex-end' onKeyDown={toggleDrawer(false)}>
           <Typography variant='h6' className={`${classes.link} ${props.props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.props.scrollTo(props.props.homeRef.current)}>Home</Typography>
           <Typography variant='h6' className={`${classes.link} ${props.props.visibleSection === 'about' ? classes.linkActive : ''}`} onClick={() => props.props.scrollTo(props.props.aboutRef.current)}>About</Typography>
