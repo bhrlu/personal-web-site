@@ -18,7 +18,7 @@ const useStyle = makeStyles(theme => ({
       cursor: 'pointer',
     },
     [theme.breakpoints.down('md')]: {
-      visibility: 'hidden',
+      display: 'none',
     },
   },
   linkActive: {
@@ -27,7 +27,7 @@ const useStyle = makeStyles(theme => ({
   },
   drawerVisibility: {
     [theme.breakpoints.up('md')]: {
-      visibility: 'hidden',
+      display: 'none'
     },
   },
 }));
@@ -39,8 +39,11 @@ const AppBarComponent = (props) => {
       <Container>
         <Toolbar>
           <Grid container justifyContent='center' alignItems='center'>
-            <Grid item xs={3} container justifyContent='flex-start' alignItems='center'>
+            <Grid sx={{ display: { xs: 'flex', md: 'block' }, justifyContent: 'space-between', }} item md={3} xs={12} container justifyContent='flex-start' alignItems='center'>
               <Typography variant='h4'>Amir Mahdi</Typography>
+              <div className={classes.drawerVisibility}>
+                <AppBarDrawer props={props} />
+              </div>
             </Grid>
             <Grid className={classes.links} item xs={9} container justifyContent='space-between' alignItems='center'>
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.homeRef.current)}>Home</Typography>
@@ -48,9 +51,6 @@ const AppBarComponent = (props) => {
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'resume' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.resumeRef.current)}>Resume</Typography>
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'skills' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.skillsRef.current)}>Skills</Typography>
               <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'contact' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.contactRef.current)}>Contact</Typography>
-              <div className={classes.drawerVisibility}>
-                <AppBarDrawer props={props} />
-              </div>
             </Grid>
           </Grid>
         </Toolbar>
