@@ -112,10 +112,11 @@ function App() {
     };
   };
 
-  const scrollTo = (ele) => {
-    ele.scrollIntoView({
+  const scrollToa = (ele) => {
+    const { offsetTop } = getDimensions(ele);
+    window.scrollTo({
+      top: offsetTop - 70,
       behavior: "smooth",
-      block: "center",
     });
   };
   useEffect(() => {
@@ -160,7 +161,7 @@ function App() {
       <div className={classes.root}>
         <AppBarComponent
           visibleSection={visibleSection}
-          scrollTo={scrollTo}
+          scrollTo={scrollToa}
           homeRef={homeRef}
           aboutRef={aboutRef}
           resumeRef={resumeRef}
