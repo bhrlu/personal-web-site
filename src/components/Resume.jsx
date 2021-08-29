@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyle = makeStyles(theme => ({
@@ -21,6 +21,9 @@ const useStyle = makeStyles(theme => ({
   description: {
     opacity: 0.6,
     padding: theme.spacing(1, 0, 1, 2),
+  },
+  button: {
+    padding: theme.spacing(3, 0),
   },
 }));
 
@@ -71,6 +74,9 @@ const Resume = (props) => {
               </CardContent>
             </Card>
           </Grid>
+        </Grid>
+        <Grid item className={classes.button} >
+          <Button size='large' variant='contained' color='secondary'>DOWNLOAD CV</Button>
         </Grid>
       </Grid>
     </Container>
