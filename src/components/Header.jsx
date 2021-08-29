@@ -5,7 +5,7 @@ import amirmahdi from '../assets/image/amirmahdi.png'
 
 const useStyle = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(7, 0),
+    margin: theme.spacing(0, 0, 3, 0),
   },
   name: {
     display: 'flex',
