@@ -14,9 +14,6 @@ const useStyle = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
   },
-  grid: {
-    padding: theme.spacing(2.5, 0)
-  },
   about: {
     padding: theme.spacing(2, 0, 0, 0),
     opacity: 0.7,
@@ -45,14 +42,14 @@ const useStyle = makeStyles(theme => ({
 const Footer = () => {
   const classes = useStyle();
   return (
-    <Container disableGutters>
+    <Container>
       <Grid className={classes.root} container justifyContent='space-between' alignItems='flex-start'>
-        <Grid className={classes.grid} container direction='column' justifyContent='center' alignItems='center' item sm={4} >
+        <Grid container direction='column' justifyContent='center' alignItems='center' item xs={4} >
           <Typography variant='h5'>About</Typography>
           <Typography variant='h6' className={classes.about}>I'm a young boy who has been interested in programming since early childhood;
             I'm not afraid to take and face any new challenge and like to experience new things.</Typography>
         </Grid>
-        <Grid className={classes.grid} container direction='column' justifyContent='center' alignItems='center' item sm={4} >
+        <Grid container direction='column' justifyContent='center' alignItems='center' item xs={4} >
           <Typography variant='h5'>Links</Typography>
           <Grid className={classes.links} container direction='column' justifyContent='center' alignItems='flex-start'>
             <Link className={`${classes.about} ${classes.link}`}><ArrowForwardIcon className={classes.icons} /> Home</Link>
@@ -62,7 +59,7 @@ const Footer = () => {
             <Link className={`${classes.about} ${classes.link}`}><ArrowForwardIcon className={classes.icons} /> Contact</Link>
           </Grid>
         </Grid>
-        <Grid className={classes.grid} container direction='column' justifyContent='center' alignItems='center' item sm={4} >
+        <Grid container direction='column' justifyContent='center' alignItems='center' item xs={4} >
           <Typography variant='h5'>Have a Questions?</Typography>
           <Link className={`${classes.about} ${classes.link} `}><PhoneIcon className={classes.icons} /> +98 910 950 5714</Link>
           <Link className={`${classes.about} ${classes.link}`}><EmailIcon className={classes.icons} /> amirmahdibaharlou@gamil.com</Link>

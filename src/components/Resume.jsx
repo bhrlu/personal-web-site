@@ -27,11 +27,11 @@ const useStyle = makeStyles(theme => ({
 const Resume = (props) => {
   const classes = useStyle();
   return (
-    <Container disableGutters id='resume' ref={props.resumeRef} className={classes.root}>
+    <Container id='resume' ref={props.resumeRef} className={classes.root}>
       <Grid container direction='column' justifyContent='center' alignItems='center' >
         <Typography className={classes.title} variant='h2'>Resume</Typography>
         <Grid container direction='row' justifyContent='flex-start' alignItems='center' >
-          <Grid item sm={6} >
+          <Grid item xs={6} >
             <Card className={classes.cardContent}>
               <CardContent>
                 <Typography className={classes.dateCard} variant='h3'>2017-2021</Typography>
@@ -41,7 +41,7 @@ const Resume = (props) => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item sm={6} >
+          <Grid item xs={6} >
             <Card className={classes.cardContent}>
               <CardContent>
                 <Typography className={classes.dateCard} variant='h3'>2017-2021</Typography>
@@ -51,7 +51,7 @@ const Resume = (props) => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item sm={6} >
+          <Grid item xs={6} >
             <Card className={classes.cardContent}>
               <CardContent>
                 <Typography className={classes.dateCard} variant='h3'>2017-2021</Typography>
@@ -61,7 +61,7 @@ const Resume = (props) => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item sm={6} >
+          <Grid item xs={6} >
             <Card className={classes.cardContent}>
               <CardContent>
                 <Typography className={classes.dateCard} variant='h3'>2017-2021</Typography>
