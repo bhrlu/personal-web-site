@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/personal-web-site/static/js/main.bd067e73.chunk.js",
+    "main.js.map": "/personal-web-site/static/js/main.bd067e73.chunk.js.map",
+    "runtime-main.js": "/personal-web-site/static/js/runtime-main.e72ba239.js",
+    "runtime-main.js.map": "/personal-web-site/static/js/runtime-main.e72ba239.js.map",
+    "static/js/2.6a1b0031.chunk.js": "/personal-web-site/static/js/2.6a1b0031.chunk.js",
+    "static/js/2.6a1b0031.chunk.js.map": "/personal-web-site/static/js/2.6a1b0031.chunk.js.map",
+    "index.html": "/personal-web-site/index.html",
+    "static/js/2.6a1b0031.chunk.js.LICENSE.txt": "/personal-web-site/static/js/2.6a1b0031.chunk.js.LICENSE.txt",
+    "static/media/PoppinsRegular.8081832f.ttf": "/personal-web-site/static/media/PoppinsRegular.8081832f.ttf",
+    "static/media/amirmahdi.4c7df84e.png": "/personal-web-site/static/media/amirmahdi.4c7df84e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e72ba239.js",
+    "static/js/2.6a1b0031.chunk.js",
+    "static/js/main.bd067e73.chunk.js"
+  ]
+}
