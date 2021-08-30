@@ -23,11 +23,11 @@ const Skills = (props) => {
 
   const classes = useStyle();
   return (
-    <Container id='skills' ref={props.skillsRef} className={classes.root}>
+    <Container disableGutters id='skills' ref={props.skillsRef} className={classes.root}>
       <Grid container direction='column' justifyContent='center' alignItems='center' >
         <Typography className={classes.title} variant='h2'>My Skills</Typography>
         <Grid container direction='row' justifyContent='flex-start' alignItems='center' >
-          <Grid className={classes.cardContent} item xs={6} >
+          <Grid className={classes.cardContent} item sm={6} xs={10} >
             <Typography className={classes.title} variant='h4'>React.js</Typography>
             <Grid container justifyContent='center' alignItems='center'>
               <Grid item xs={11}>
@@ -38,7 +38,7 @@ const Skills = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid className={classes.cardContent} item xs={6} >
+          <Grid className={classes.cardContent} item sm={6} xs={10} >
             <Typography className={classes.title} variant='h4'>JavaScript</Typography>
             <Grid container justifyContent='center' alignItems='center'>
               <Grid item xs={11}>
@@ -49,7 +49,7 @@ const Skills = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid className={classes.cardContent} item xs={6} >
+          <Grid className={classes.cardContent} item sm={6} xs={10} >
             <Typography className={classes.title} variant='h4'>JavaScript</Typography>
             <Grid container justifyContent='center' alignItems='center'>
               <Grid item xs={11}>
@@ -60,7 +60,7 @@ const Skills = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid className={classes.cardContent} item xs={6} >
+          <Grid className={classes.cardContent} item sm={6} xs={10}>
             <Typography className={classes.title} variant='h4'>JavaScript</Typography>
             <Grid container justifyContent='center' alignItems='center'>
               <Grid item xs={11}>
@@ -71,7 +71,7 @@ const Skills = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid className={classes.cardContent} item xs={6} >
+          <Grid className={classes.cardContent} item sm={6} xs={10} >
             <Typography className={classes.title} variant='h4'>JavaScript</Typography>
             <Grid container justifyContent='center' alignItems='center'>
               <Grid item xs={11}>

@@ -173,7 +173,14 @@ function App() {
         <Resume resumeRef={resumeRef} />
         <Skills skillsRef={skillsRef} />
         <Contact contactRef={contactRef} />
-        <Footer />
+        <Footer
+          scrollTo={scrollToa}
+          homeRef={homeRef}
+          aboutRef={aboutRef}
+          resumeRef={resumeRef}
+          skillsRef={skillsRef}
+          contactRef={contactRef}
+        />
       </div>
     </ThemeProvider>
   );
