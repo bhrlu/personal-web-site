@@ -16,14 +16,13 @@ const useStyle = makeStyles(theme => ({
   },
   image: {
     backgroundImage: `url(${amirmahdi})`,
-    Width: '100%',
     height: 800,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center top',
     [theme.breakpoints.down('md')]: {
-      height: '80%',
-      backgroundSize: 'cover',
+      height: '70%',
+      backgroundSize: '70%',
       padding: theme.spacing(3)
     },
   },

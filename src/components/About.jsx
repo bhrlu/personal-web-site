@@ -8,7 +8,7 @@ const useStyle = makeStyles(theme => ({
     padding: theme.spacing(3, 0),
   },
   about: {
-    maxWidth: '80%',
+    maxWidth: '90%',
     padding: theme.spacing(2, 0),
     opacity: 0.7
   },
@@ -44,13 +44,13 @@ const About = (props) => {
           <Typography className={classes.about} paragraph>I'm a young boy who has been interested in programming since early childhood; I'm not afraid to take and face any new challenge and like to experience new things.</Typography>
         </Grid>
         <Grid container item xs={6}>
-          <Grid item xs={5}>
+          <Grid item xs={3.5}>
             <Typography variant='h6' className={classes.descriptionsTitle}>Name:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Date of brith:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Email:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Phone:</Typography>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={8.5}>
             <Typography variant='h6' className={classes.descriptions}>Amirmahdi Baharlou</Typography>
             <Typography variant='h6' className={classes.descriptions}>November 18, 1999</Typography>
             <Typography variant='h6' className={classes.descriptions}>amirmahdibaharlou@ gmail.com</Typography>

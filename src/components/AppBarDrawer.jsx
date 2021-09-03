@@ -6,7 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyle = makeStyles(theme => ({
   link: {
-    padding: theme.spacing(1, 2, 1, 5),
+    padding: theme.spacing(1, 5, 1, 2),
     '&:hover': {
       color: theme.palette.secondary.main,
       cursor: 'pointer',
@@ -28,12 +28,12 @@ const AppBarDrawer = (props) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-    setOpenDrawer({ ...openDrawer, 'right': open });
+    setOpenDrawer({ ...openDrawer, 'left': open });
   };
 
   const list = () => {
     return (
-      <Grid container direction='column' justifyContent='flex-start' alignItems='flex-end' onKeyDown={toggleDrawer(false)}>
+      <Grid container direction='column' justifyContent='flex-start' alignItems='flex-start' onKeyDown={toggleDrawer(false)}>
         <Typography variant='h6' className={`${classes.link} ${props.props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.props.scrollTo(props.props.homeRef.current)}>Home</Typography>
         <Typography variant='h6' className={`${classes.link} ${props.props.visibleSection === 'about' ? classes.linkActive : ''}`} onClick={() => props.props.scrollTo(props.props.aboutRef.current)}>About</Typography>
         <Typography variant='h6' className={`${classes.link} ${props.props.visibleSection === 'resume' ? classes.linkActive : ''}`} onClick={() => props.props.scrollTo(props.props.resumeRef.current)}>Resume</Typography>
@@ -48,8 +48,8 @@ const AppBarDrawer = (props) => {
         <MenuIcon color='secondary' />
       </IconButton>
       <Drawer
-        anchor='right'
-        open={openDrawer['right']}
+        anchor='left'
+        open={openDrawer['left']}
         onClose={toggleDrawer(false)}
       >
         {list()}

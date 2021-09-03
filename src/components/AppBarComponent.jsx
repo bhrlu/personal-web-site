@@ -9,7 +9,7 @@ const useStyle = makeStyles(theme => ({
     padding: theme.spacing(3, 0),
   },
   links: {
-    padding: theme.spacing(0, 0, 0, 18),
+    padding: theme.spacing(0, 18, 0, 0),
   },
   link: {
     '&:hover': {
@@ -36,12 +36,12 @@ const AppBarComponent = (props) => {
   return (
     <AppBar position='sticky'>
       <Toolbar>
-        <Grid container justifyContent='center' alignItems='center'>
-          <Grid sx={{ display: { xs: 'flex', md: 'block' }, justifyContent: 'space-between', }} item md={3} xs={12} container justifyContent='flex-start' alignItems='center'>
-            <Typography variant='h4'>Amir Mahdi</Typography>
+        <Grid container direction='row-reverse' justifyContent='center' alignItems='center'>
+          <Grid sx={{ display: { xs: 'flex', md: 'block' }, justifyContent: 'space-between', }} item md={3} xs={12} container justifyContent='flex-end' alignItems='center'>
             <div className={classes.drawerVisibility}>
               <AppBarDrawer props={props} />
             </div>
+            <Typography variant='h4'>Amir Mahdi</Typography>
           </Grid>
           <Grid className={classes.links} item xs={9} container justifyContent='space-between' alignItems='center'>
             <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.homeRef.current)}>Home</Typography>
