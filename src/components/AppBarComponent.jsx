@@ -1,7 +1,11 @@
+import { useContext } from 'react';
+
 import { AppBar, Grid, Toolbar, Typography } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/styles';
 import AppBarDrawer from './AppBarDrawer';
+
+import { InfoContext } from '../context/InfoContext';
 
 
 const useStyle = makeStyles(theme => ({
@@ -9,7 +13,7 @@ const useStyle = makeStyles(theme => ({
     padding: theme.spacing(3, 0),
   },
   links: {
-    padding: theme.spacing(0, 18, 0, 0),
+    padding: theme.spacing(0, 0, 0, 20),
   },
   link: {
     '&:hover': {
@@ -32,16 +36,19 @@ const useStyle = makeStyles(theme => ({
 }));
 
 const AppBarComponent = (props) => {
+
+  const { webSiteTitle } = useContext(InfoContext);
+
   const classes = useStyle();
   return (
     <AppBar position='sticky'>
       <Toolbar>
-        <Grid container direction='row-reverse' justifyContent='center' alignItems='center'>
+        <Grid container direction='row' justifyContent='center' alignItems='center'>
           <Grid sx={{ display: { xs: 'flex', md: 'block' }, justifyContent: 'space-between', }} item md={3} xs={12} container justifyContent='flex-end' alignItems='center'>
             <div className={classes.drawerVisibility}>
               <AppBarDrawer props={props} />
             </div>
-            <Typography variant='h4'>Amir Mahdi</Typography>
+            <Typography variant='h4'>{webSiteTitle}</Typography>
           </Grid>
           <Grid className={classes.links} item xs={9} container justifyContent='space-between' alignItems='center'>
             <Typography variant='h6' className={`${classes.link} ${props.visibleSection === 'home' ? classes.linkActive : ''}`} onClick={() => props.scrollTo(props.homeRef.current)}>Home</Typography>
