@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+Just change `src/context/InfoContext.js` to get your personal portfolio. Feel free to use it as-is or customize it as much as you want.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+But if you want to **contribute** and make this much better for other developer have a look at [Issues](https://github.com/bhrlu/personal-web-site/issues).
 
-## Available Scripts
 
-In the project directory, you can run:
+If you created something awesome and want to contribute then feel free to open an [pull request](https://github.com/bhrlu/personal-web-site/pulls).
+## Sections
+✔️ Summary and About me\
+✔️ Skills\
+✔️ Education\
+✔️ Work Experience\
+✔️ Contact me\
+✔️ Github Profile
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer or use [Docker](https://www.docker.com/products/docker-desktop).
 
-### `npm test`
+```
+node@v10.16.0 or higher
+npm@6.9.0 or higher
+git@2.17.1 or higher
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How To Use 
 
-### `npm run build`
+From your command line, clone and run developerFolio:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clone this repository
+$ git clone https://github.com/Ehsanera/developerFolio.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Go into the repository
+$ cd developerFolio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+$ npm install
 
-### `npm run eject`
+#Start's development server
+$ npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Change and customize every section according to your need.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Personalize page content in `/src/context/InfoContext.js` & modify it as per your need.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+/* Change this file to get your Personal web site */
+const webSiteTitle = 'Amir Mahdi';
+const info = {
+  /* Your Summary And Greeting Section */
+  name: 'Amir mahdi',
+  family: 'baharlou',
+  introduce: `I'm a young Engineer who has been educating in PC Engineering and interested in programming since earlychildhood; I'm willing  to take and face any new challenge and like to experience new adventures.`,
+  dateOfBrith: 'November 18, 1999',
+  ...
+};
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+const skills = [
+  { skill: 'HTML', persent: 90 },
+  { skill: 'CSS', persent: 90 },
+  { skill: 'JavaScript', persent: 80 },
+];
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const resume = { ... }
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+#### Adding your picture
+Insert your picture in `src/assets/image` and rename to `imageProfile.png`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deployment
+When you are done with the setup, you should host your website online.
+We highly recommend to read through the [Deploying on Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) docs for React.
 
-### Analyzing the Bundle Size
+#### Deploying to Github Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This section guides you to deploy your portfolio on Github pages.
 
-### Making a Progressive Web App
+- Navigate to `package.json` and enter your domain name instead of `https://bhrlu.com/` in `homepage` variable. For example, if you want your site to be `https://<your-username>.github.io/developerFolio`, add the same to the homepage section of `package.json`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- In short you can also add `/personal-web-site` to `package.json` as both are exactly same. Upon doing so, you tell `create-react-app` to add the path assets accordingly.
 
-### Advanced Configuration
+- Optionally, configure the domain. You can configure a custom domain with GitHub Pages by adding a `CNAME` file to the `public/` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Follow through the guide to setup GitHub pages from the official CRA docs [here](https://create-react-app.dev/docs/deployment/#github-pages).
 
-### Deployment
+#### Deploying to Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You could also host directly with Netlify by linking your own repository.
 
-### `npm run build` fails to minify
+[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ehsanera/developerFolio)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more information, read [hosting on Netlify](https://create-react-app.dev/docs/deployment/#netlify).
+
+## Technologies Used 
+
+- [React](https://reactjs.org/)
+- [Material-UI](https://material-ui.com/)
+- [UUID](https://github.com/uuidjs/uuid)
+
