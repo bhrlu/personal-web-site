@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
+import { InfoProvider } from './context/InfoContext';
 
 import { createTheme, responsiveFontSizes, ThemeProvider, CssBaseline, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import PoppinsRegularTTF from './assets/fonts/poppins/PoppinsRegular.ttf';
-import About from './components/About';
 
 import AppBarComponent from './components/AppBarComponent';
+import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -162,35 +163,37 @@ function App() {
   const classes = useStyle();
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className={classes.root}>
-        <Container className={classes.container} >
-          <AppBarComponent
-            visibleSection={visibleSection}
-            scrollTo={scrollToa}
-            homeRef={homeRef}
-            aboutRef={aboutRef}
-            resumeRef={resumeRef}
-            skillsRef={skillsRef}
-            contactRef={contactRef}
-          />
-          <Header homeRef={homeRef} />
-          <About aboutRef={aboutRef} />
-          <Resume resumeRef={resumeRef} />
-          <Skills skillsRef={skillsRef} />
-          <Contact contactRef={contactRef} />
-          <Footer
-            scrollTo={scrollToa}
-            homeRef={homeRef}
-            aboutRef={aboutRef}
-            resumeRef={resumeRef}
-            skillsRef={skillsRef}
-            contactRef={contactRef}
-          />
-        </Container>
-      </div>
-    </ThemeProvider>
+    <InfoProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className={classes.root}>
+          <Container className={classes.container} >
+            <AppBarComponent
+              visibleSection={visibleSection}
+              scrollTo={scrollToa}
+              homeRef={homeRef}
+              aboutRef={aboutRef}
+              resumeRef={resumeRef}
+              skillsRef={skillsRef}
+              contactRef={contactRef}
+            />
+            <Header homeRef={homeRef} />
+            <About aboutRef={aboutRef} />
+            <Resume resumeRef={resumeRef} />
+            <Skills skillsRef={skillsRef} />
+            <Contact contactRef={contactRef} />
+            <Footer
+              scrollTo={scrollToa}
+              homeRef={homeRef}
+              aboutRef={aboutRef}
+              resumeRef={resumeRef}
+              skillsRef={skillsRef}
+              contactRef={contactRef}
+            />
+          </Container>
+        </div>
+      </ThemeProvider>
+    </InfoProvider>
   );
 }
 

@@ -1,9 +1,13 @@
+import { useContext } from 'react';
+
 import { Grid, Link, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import LocalPhoneIcon from '@material-ui/icons/LocalPhone';
 import EmailIcon from '@material-ui/icons/Email';
 import WebIcon from '@material-ui/icons/Web';
+
+import { InfoContext } from '../context/InfoContext';
 
 const useStyle = makeStyles(theme => ({
   root: {
@@ -27,6 +31,9 @@ const useStyle = makeStyles(theme => ({
 }));
 
 const Contact = (props) => {
+
+  const {info} = useContext(InfoContext);
+
   const classes = useStyle();
   return (
     <Grid id='contact' ref={props.contactRef} className={classes.root} container justifyContent='center' alignItems='center'>
@@ -35,17 +42,17 @@ const Contact = (props) => {
         <Grid container direction='column' justifyContent='center' alignItems='center' item md={4}>
           <LocalPhoneIcon color='secondary' className={classes.icons} fontSize='large' />
           <Typography variant='h5'>Phone</Typography>
-          <Link className={classes.links}>+98 910 950 5714</Link>
+          <Link href={`tel:${info.phone}`} className={classes.links}>{info.phone}</Link>
         </Grid>
         <Grid container direction='column' justifyContent='center' alignItems='center' item md={4}>
           <EmailIcon color='secondary' className={classes.icons} fontSize='large' />
           <Typography variant='h5'>Email</Typography>
-          <Link className={classes.links}>amirmahdibaharlou@gamil.com</Link>
+          <Link href={`mailto:${info.email}`} className={classes.links}>{info.email}</Link>
         </Grid>
         <Grid container direction='column' justifyContent='center' alignItems='center' item md={4}>
           <WebIcon color='secondary' className={classes.icons} fontSize='large' />
           <Typography variant='h5'>WebSite</Typography>
-          <Link className={classes.links}>bhrlu.ir</Link>
+          <Link href={info.webSite} className={classes.links}>{info.webSite}</Link>
         </Grid>
       </Grid>
     </Grid>

@@ -1,7 +1,10 @@
+import { useContext } from 'react';
+
 import { Button, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import amirmahdi from '../assets/image/amirmahdi.png'
+import { InfoContext } from '../context/InfoContext';
+import imageProfile from '../assets/image/imageProfile.png'
 
 const useStyle = makeStyles(theme => ({
   root: {
@@ -23,7 +26,7 @@ const useStyle = makeStyles(theme => ({
     padding: theme.spacing(5, 0, 0, 0),
   },
   imageGrid: {
-    backgroundImage: `url(${amirmahdi})`,
+    backgroundImage: `url(${imageProfile})`,
     height: 500,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -34,6 +37,9 @@ const useStyle = makeStyles(theme => ({
   },
 }));
 const About = (props) => {
+
+  const {info} = useContext(InfoContext);
+
   const classes = useStyle();
   return (
     <Grid id='about' ref={props.aboutRef} className={classes.root} container justifyContent='center' alignItems='center'>
@@ -41,24 +47,24 @@ const About = (props) => {
       <Grid sx={{ pl:{ xs: 3} }} container direction='column' justifyContent='center' alignItems='flex-start' item sm={6} md={6}>
         <Grid item xs={6}>
           <Typography variant='h2'>About Me</Typography>
-          <Typography className={classes.about} paragraph>I'm a young boy who has been interested in programming since early childhood; I'm not afraid to take and face any new challenge and like to experience new things.</Typography>
+          <Typography className={classes.about} paragraph>{info.introduce}</Typography>
         </Grid>
         <Grid container item xs={6}>
-          <Grid item xs={3.5}>
+          <Grid item xs={3}>
             <Typography variant='h6' className={classes.descriptionsTitle}>Name:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Date of brith:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Email:</Typography>
             <Typography variant='h6' className={classes.descriptionsTitle}>Phone:</Typography>
           </Grid>
-          <Grid item xs={8.5}>
-            <Typography variant='h6' className={classes.descriptions}>Amirmahdi Baharlou</Typography>
-            <Typography variant='h6' className={classes.descriptions}>November 18, 1999</Typography>
-            <Typography variant='h6' className={classes.descriptions}>amirmahdibaharlou@ gmail.com</Typography>
-            <Typography variant='h6' className={classes.descriptions}>+98 910 950 5714</Typography>
+          <Grid item xs={9}>
+            <Typography variant='h6' className={classes.descriptions}>{info.name} {info.family}</Typography>
+            <Typography variant='h6' className={classes.descriptions}>{info.dateOfBrith}</Typography>
+            <Typography variant='h6' className={classes.descriptions}>{info.email}</Typography>
+            <Typography variant='h6' className={classes.descriptions}>{info.phone}</Typography>
           </Grid>
         </Grid>
         <Grid item className={classes.button} >
-          <Button size='large' variant='contained' color='secondary'>DOWNLOAD CV</Button>
+          <Button download href={info.cvDownload} size='large' variant='contained' color='secondary'>DOWNLOAD CV</Button>
         </Grid>
       </Grid>
     </Grid>
