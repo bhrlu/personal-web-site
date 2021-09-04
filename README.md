@@ -78,9 +78,9 @@ We highly recommend to read through the [Deploying on Github Pages](https://crea
 
 #### Deploying to Github Pages
 
-This section guides you to deploy your portfolio on Github pages.
+This section guides you to deploy your personal web site on Github pages.
 
-- Navigate to `package.json` and enter your domain name instead of `https://bhrlu.com/` in `homepage` variable. For example, if you want your site to be `https://<your-username>.github.io/developerFolio`, add the same to the homepage section of `package.json`.
+- Navigate to `package.json` and enter your domain name instead of `https://bhrlu.github.io/personal-web-site/` in `homepage` variable. For example, if you want your site to be `https://<your-username>.github.io/personal-web-site`, add the same to the homepage section of `package.json`.
 
 - In short you can also add `/personal-web-site` to `package.json` as both are exactly same. Upon doing so, you tell `create-react-app` to add the path assets accordingly.
 
@@ -92,7 +92,7 @@ This section guides you to deploy your portfolio on Github pages.
 
 You could also host directly with Netlify by linking your own repository.
 
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ehsanera/developerFolio)
+[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bhrlu/personal-web-site)
 
 For more information, read [hosting on Netlify](https://create-react-app.dev/docs/deployment/#netlify).
 
