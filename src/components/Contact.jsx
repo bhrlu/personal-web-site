@@ -52,7 +52,7 @@ const Contact = (props) => {
         <Grid container direction='column' justifyContent='center' alignItems='center' item md={4}>
           <WebIcon color='secondary' className={classes.icons} fontSize='large' />
           <Typography variant='h5'>WebSite</Typography>
-          <Link href={info.webSite} className={classes.links}>{info.webSite}</Link>
+          <Link href={`https://${info.webSite}`} className={classes.links}>{info.webSite}</Link>
         </Grid>
       </Grid>
     </Grid>
