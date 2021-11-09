@@ -16,7 +16,7 @@ export const InfoProvider = props => {
     gitHub: 'https://github.com/bhrlu',
     linkedIn: 'https://www.linkedin.com/in/amirmahdi-baharlou/',
     telegram: 'https://t.me/Amir_mb_b',
-    cvDownload: 'https://drive.google.com/file/d/1X0Qw96X-NHb5dnwPA-d0HGUfTgjU7qic/view?usp=sharing',
+    cvDownload: 'https://drive.google.com/file/d/1q1DDjxD2CGHsqEtbEKTESmNpDoT1Vc5n/view?usp=sharing',
     webSite: 'bhrlu.github.io/personal-web-site',
   };
 
