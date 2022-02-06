@@ -16,7 +16,7 @@ If you created something awesome and want to contribute then feel free to open a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer or use [Docker](https://www.docker.com/products/docker-desktop).
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
 
 ```
 node@v10.16.0 or higher
@@ -30,10 +30,10 @@ From your command line, clone and run developerFolio:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Ehsanera/developerFolio.git
+$ git clone https://github.com/bhrlu/personal-web-site.git
 
 # Go into the repository
-$ cd developerFolio
+$ cd personal-web-site
 
 # Install dependencies
 $ npm install
